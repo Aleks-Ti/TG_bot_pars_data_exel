@@ -1,0 +1,173 @@
+2023-09-14 23:55:43,206 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-14 23:55:43,358 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-14 23:55:43,358 - start_polling - INFO - Start polling.
+2023-09-14 23:56:30,893 - default_exception_handler - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-17' coro=<Dispatcher._process_polling_updates() done, defined at c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("a bytes-like object is required, not '_io.BufferedWriter'")>
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 74, in upload_file
+    buffer = io.BytesIO(file_data)
+TypeError: a bytes-like object is required, not '_io.BufferedWriter'
+2023-09-14 23:56:44,374 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-14 23:56:44,514 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-14 23:56:44,514 - start_polling - INFO - Start polling.
+2023-09-14 23:56:52,002 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-14 23:56:52,147 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-14 23:56:52,148 - start_polling - INFO - Start polling.
+2023-09-14 23:57:24,177 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-14 23:57:24,327 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-14 23:57:24,328 - start_polling - INFO - Start polling.
+2023-09-14 23:58:15,848 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-14 23:58:15,991 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-14 23:58:15,992 - start_polling - INFO - Start polling.
+2023-09-14 23:58:24,500 - default_exception_handler - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("a bytes-like object is required, not '_io.BufferedWriter'")>
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 74, in upload_file
+    buffer = io.BytesIO(file_data)
+TypeError: a bytes-like object is required, not '_io.BufferedWriter'
+2023-09-14 23:59:54,068 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-14 23:59:54,218 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-14 23:59:54,218 - start_polling - INFO - Start polling.
+2023-09-15 00:00:05,697 - default_exception_handler - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError("'Document' object has no attribute 'read'")>
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 71, in upload_file
+    file_data = await document.read()
+AttributeError: 'Document' object has no attribute 'read'
+2023-09-15 00:01:20,692 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:01:20,876 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:01:20,877 - start_polling - INFO - Start polling.
+2023-09-15 00:01:36,449 - default_exception_handler - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("a bytes-like object is required, not '_io.BufferedWriter'")>
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 74, in upload_file
+    buffer = io.BytesIO(file_data)
+TypeError: a bytes-like object is required, not '_io.BufferedWriter'
+2023-09-15 00:02:40,753 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:02:40,913 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:02:40,913 - start_polling - INFO - Start polling.
+2023-09-15 00:03:07,693 - default_exception_handler - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("a bytes-like object is required, not '_io.BytesIO'")>
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 79, in upload_file
+    buffer = io.BytesIO(file_bytes)
+TypeError: a bytes-like object is required, not '_io.BytesIO'
+2023-09-15 00:05:02,267 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:05:02,413 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:05:02,413 - start_polling - INFO - Start polling.
+2023-09-15 00:05:13,155 - default_exception_handler - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("object str can't be used in 'await' expression")>
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 73, in upload_file
+    file_url = await bot.get_file_url(document.file_id)
+TypeError: object str can't be used in 'await' expression
+2023-09-15 00:29:40,518 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:29:40,674 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:29:40,675 - start_polling - INFO - Start polling.
+2023-09-15 00:33:51,428 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:33:51,565 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:33:51,565 - start_polling - INFO - Start polling.
+2023-09-15 00:37:08,076 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:37:08,221 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:37:08,221 - start_polling - INFO - Start polling.
+2023-09-15 00:39:20,580 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:39:20,725 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:39:20,726 - start_polling - INFO - Start polling.
+2023-09-15 00:39:30,521 - default_exception_handler - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=AttributeError('__aenter__')>
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 77, in upload_file
+    async with bot.download_file(file_path) as file_data:
+AttributeError: __aenter__
+2023-09-15 00:44:58,155 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:44:58,302 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:44:58,302 - start_polling - INFO - Start polling.
+2023-09-15 00:46:21,789 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:46:21,935 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:46:21,936 - start_polling - INFO - Start polling.
+2023-09-15 00:49:21,770 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:49:21,916 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:49:21,917 - start_polling - INFO - Start polling.
+2023-09-15 00:50:53,626 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:50:53,768 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:50:53,768 - start_polling - INFO - Start polling.
+2023-09-15 00:51:25,548 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:51:25,689 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:51:25,689 - start_polling - INFO - Start polling.
+2023-09-15 00:52:16,530 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 00:52:16,672 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 00:52:16,672 - start_polling - INFO - Start polling.
+2023-09-15 01:03:36,294 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 01:03:36,445 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 01:03:36,445 - start_polling - INFO - Start polling.
+2023-09-15 01:03:39,228 - cancel_handler - INFO - Cancelling state 'ByteState:name'
