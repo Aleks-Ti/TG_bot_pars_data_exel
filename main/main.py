@@ -14,6 +14,7 @@ from settings import (
     COMMANDS_FUNC,
 )
 from aiogram.dispatcher.filters.state import State, StatesGroup
+
 load_dotenv()
 
 TELEGRAM_TOKEN = os.getenv('TOKEN')
@@ -53,26 +54,31 @@ async def cancel_handler(message: types.Message, state: FSMContext):
         await message.answer('Нет активных операций для отмены.')
 
 
-@dp.message_handler(commands=['byte'])
+@dp.message_handler()
 async def cmd_upload_file(message: types.Message):
     """Пользовательский ввод и состояние для конвертации."""
     await ByteState.name.set()
-    await message.reply(
-        'Загрузите ваш файл!'
-    )
+    await message.reply('Загрузите ваш файл!')
 
 
 @dp.message_handler(state=ByteState.name, content_types=ContentTypes.DOCUMENT)
-async def upload_file(message: Message, state: FSMContext):
+async def parse_date(message: Message, state: FSMContext):
     if document := message.document:
         try:
-            file_data = io.BytesIO()
-            await document.download(destination_file=file_data)
-            file_data.seek(0)
-            df = pd.read_excel(file_data)
-            await message.reply("Данные из файла успешно обработаны. Вот некоторая информация из файла:\n\n" + df.head().to_string())
-        except Exception as e:
-            await message.reply(f"Произошла ошибка при обработке файла: {str(e)}")
+            file_extension = document.file_name.split('.')[-1].lower()
+            if file_extension == 'xlsx':
+                file_data = io.BytesIO()
+                await document.download(destination_file=file_data)
+                file_data.seek(0)
+                df = pd.read_excel(file_data)
+                await message.reply(
+                    df.head().to_string()
+                )
+        except Exception as err:
+            await logging.error(
+                f"Произошла ошибка при обработке файла: {str(err)}"
+            )
+        await state.finish()
 
 
 @dp.message_handler(commands=['start'])
@@ -95,7 +101,7 @@ async def send_welcome(message: types.Message):
         'Вас приветствует Ваш персональный помощник!\n'
         'Вы можете загрузить файл кликнув -> /upload_file\n'
         'Для отмены, выберите -> /cancel\n'
-        'Или по кнопке внизу 👇\n',
+        'Или жмите по кнопке внизу 👇\n',
         reply_markup=keyboard,
     )
 
