@@ -14,6 +14,7 @@ from settings import (
     UPLOAD_FILE,
     COMMANDS_FUNC,
 )
+from database.insert_data_db import added_parse_date_db
 from aiogram.dispatcher.filters.state import State, StatesGroup
 
 load_dotenv()
@@ -45,7 +46,7 @@ class ByteState(StatesGroup):
 
 @dp.message_handler(commands=['cancel'], state='*')
 async def cancel_handler(message: types.Message, state: FSMContext):
-    """Обработчик команды отмены."""
+    """Обработчик команды отмена."""
     current_state = await state.get_state()
     if current_state is not None:
         logging.info('Cancelling state %r', current_state)
@@ -64,6 +65,7 @@ async def cmd_upload_file(message: types.Message):
 
 @dp.message_handler(state=ByteState.name, content_types=ContentTypes.DOCUMENT)
 async def parse_date(message: Message, state: FSMContext):
+    """Получение файла и данных."""
     if document := message.document:
         try:
             file_extension = document.file_name.split('.')[-1].lower()
@@ -75,9 +77,10 @@ async def parse_date(message: Message, state: FSMContext):
                 await message.reply(
                     df.head().to_string()
                 )
+                added_parse_date_db(message['from'], df)
         except Exception as err:
             await logging.error(
-                f"Произошла ошибка при обработке файла: {str(err)}"
+                f'Произошла ошибка при обработке файла: {str(err)}'
             )
         await state.finish()
 
@@ -91,7 +94,7 @@ async def send_welcome(message: types.Message):
         create_user - создания юзера и занесения в базу данных.
     """
 
-    added_user(message['from'])
+    await added_user(message['from'])
 
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     button_1 = types.KeyboardButton(text=UPLOAD_FILE)
@@ -111,7 +114,7 @@ async def send_welcome(message: types.Message):
     lambda message: message.text in COMMANDS_FUNC, content_types=['text']
 )
 async def listen_message(message: types.Message):
-    '''Отлов нажатой кнопки, и подключение функционала.'''
+    """Отлов нажатой кнопки, и подключение функционала."""
     commands = {
         UPLOAD_FILE: cmd_upload_file,
     }

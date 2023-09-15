@@ -73,3 +73,91 @@ sqlite3.IntegrityError: UNIQUE constraint failed: users.telegram_id
 2023-09-15 02:59:06,713 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
 2023-09-15 02:59:06,846 - _skip_updates - WARNING - Updates were skipped successfully.
 2023-09-15 02:59:06,847 - start_polling - INFO - Start polling.
+2023-09-15 03:38:07,809 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 03:38:07,967 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 03:38:07,967 - start_polling - INFO - Start polling.
+2023-09-15 03:38:25,937 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 03:38:26,087 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 03:38:26,088 - start_polling - INFO - Start polling.
+2023-09-15 03:39:23,810 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 03:39:23,964 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 03:39:23,965 - start_polling - INFO - Start polling.
+2023-09-15 03:40:43,228 - parse_date - ERROR - Произошла ошибка при обработке файла: 'title_column'
+2023-09-15 03:40:43,230 - default_exception_handler - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("object NoneType can't be used in 'await' expression")>
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\pandas\core\indexes\base.py", line 3790, in get_loc
+    return self._engine.get_loc(casted_key)
+  File "index.pyx", line 152, in pandas._libs.index.IndexEngine.get_loc
+  File "index.pyx", line 181, in pandas._libs.index.IndexEngine.get_loc
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7080, in pandas._libs.hashtable.PyObjectHashTable.get_item
+  File "pandas\_libs\hashtable_class_helper.pxi", line 7088, in pandas._libs.hashtable.PyObjectHashTable.get_item
+KeyError: 'title_column'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 80, in parse_date
+    await added_parse_date(message['from'], df)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\database\insert_data_db.py", line 14, in added_parse_date
+    title = row['title_column']  # Замените 'title_column' на имя колонки с заголовками
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\pandas\core\series.py", line 1040, in __getitem__
+    return self._get_value(key)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\pandas\core\series.py", line 1156, in _get_value
+    loc = self.index.get_loc(label)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\pandas\core\indexes\base.py", line 3797, in get_loc
+    raise KeyError(key) from err
+KeyError: 'title_column'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 82, in parse_date
+    await logging.error(
+TypeError: object NoneType can't be used in 'await' expression
+2023-09-15 03:41:18,130 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 03:41:18,278 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 03:41:18,279 - start_polling - INFO - Start polling.
+2023-09-15 03:41:34,103 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 03:41:34,242 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 03:41:34,243 - start_polling - INFO - Start polling.
+2023-09-15 03:42:51,050 - parse_date - ERROR - Произошла ошибка при обработке файла: object NoneType can't be used in 'await' expression
+2023-09-15 03:42:51,052 - default_exception_handler - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-14' coro=<Dispatcher._process_polling_updates() done, defined at c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py:407> exception=TypeError("object NoneType can't be used in 'await' expression")>
+Traceback (most recent call last):
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 80, in parse_date
+    await added_parse_date(message['from'], df)
+TypeError: object NoneType can't be used in 'await' expression
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 415, in _process_polling_updates
+    for responses in itertools.chain.from_iterable(await self.process_updates(updates, fast)):
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 235, in process_updates
+    return await asyncio.gather(*tasks)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\dispatcher.py", line 256, in process_update
+    return await self.message_handlers.notify(update.message)
+  File "c:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\venv\lib\site-packages\aiogram\dispatcher\handler.py", line 117, in notify
+    response = await handler_obj.handler(*args, **partial_data)
+  File "C:\Users\Alti\Desktop\Dev\ТЕСТОВЫЕ\Technesis\TG_bot_pars_data_exel\main\main.py", line 82, in parse_date
+    await logging.error(
+TypeError: object NoneType can't be used in 'await' expression
+2023-09-15 03:45:52,964 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 03:45:53,114 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 03:45:53,114 - start_polling - INFO - Start polling.
+2023-09-15 03:51:05,232 - _welcome - INFO - Bot: Azur [@automatic_azur_bot]
+2023-09-15 03:51:05,382 - _skip_updates - WARNING - Updates were skipped successfully.
+2023-09-15 03:51:05,383 - start_polling - INFO - Start polling.

@@ -1,19 +1,24 @@
 import sqlite3
-from database.create_user_profile import user_exists
+from .create_user_profile import user_exists
 
 
-def added_parse_date(date_telegram_profile):
-    '''Добавление пользователя в базу данных.'''
+def added_parse_date_db(date_telegram_profile, data_files):
+    """Добавление данных загруженного файла xlsx."""
     con = sqlite3.connect('db.sqlite')
     cur = con.cursor()
 
     tg_id = date_telegram_profile['id']
 
     if user_exists(tg_id, cur):
-        cur.execute('''
-        INSERT INTO date_exel(user_id, title, url, xpath)
-        VALUES (?, ?, ?);
-        ''', (tg_id, ))
+        for _, row in data_files.iterrows():
+            title = row['title']
+            url = row['url']
+            xpath = row['xpath']
+
+            cur.execute('''
+            INSERT INTO date_exel(user_id, title, url, xpath)
+            VALUES (?, ?, ?, ?);
+            ''', (tg_id, title, url, xpath))
 
     con.commit()
     con.close()

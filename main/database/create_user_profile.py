@@ -2,7 +2,7 @@ import sqlite3
 
 
 def user_exists(tg_user_id, db_connector):
-    '''Проверка - существует ли пользователь или нет.'''
+    """Проверка - существует ли пользователь или нет."""
     db_connector.execute(
         'SELECT id FROM users WHERE telegram_id = ?', (tg_user_id,)
     )
@@ -10,7 +10,7 @@ def user_exists(tg_user_id, db_connector):
 
 
 def added_user(date_telegram_profile):
-    '''Добавление пользователя в базу данных.'''
+    """Добавление пользователя в базу данных."""
     con = sqlite3.connect('db.sqlite')
     cur = con.cursor()
 
