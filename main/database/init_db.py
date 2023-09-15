@@ -6,10 +6,11 @@ cur = con.cursor()
 
 
 def create_db():
+    '''Создание таблиц для базы данных.'''
     cur.executescript('''
     CREATE TABLE IF NOT EXISTS users(
         id INTEGER PRIMARY KEY,
-        telegram_id INTEGER,
+        telegram_id INTEGER UNIQUE,
         name TEXT
     );
         CREATE TABLE IF NOT EXISTS date_exel(

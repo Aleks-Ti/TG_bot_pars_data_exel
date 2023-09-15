@@ -8,6 +8,7 @@ program.log
 __pycache__
 test.xlsx
 documents
+db.sqlite
 #Cache folder
 .alcache/
 #Symbols folder

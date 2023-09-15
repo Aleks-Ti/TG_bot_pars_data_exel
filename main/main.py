@@ -1,5 +1,6 @@
 import logging
 import os
+from database.create_user_profile import added_user
 import pandas as pd
 from aiogram.types import ContentTypes, Message
 from aiogram import Bot, Dispatcher, executor, types
@@ -54,7 +55,7 @@ async def cancel_handler(message: types.Message, state: FSMContext):
         await message.answer('Нет активных операций для отмены.')
 
 
-@dp.message_handler()
+@dp.message_handler(commands=['cmd_upload_file'])
 async def cmd_upload_file(message: types.Message):
     """Пользовательский ввод и состояние для конвертации."""
     await ByteState.name.set()
@@ -90,7 +91,7 @@ async def send_welcome(message: types.Message):
         create_user - создания юзера и занесения в базу данных.
     """
 
-    # create_user(message)
+    added_user(message['from'])
 
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     button_1 = types.KeyboardButton(text=UPLOAD_FILE)
@@ -99,7 +100,7 @@ async def send_welcome(message: types.Message):
 
     await message.reply(
         'Вас приветствует Ваш персональный помощник!\n'
-        'Вы можете загрузить файл кликнув -> /upload_file\n'
+        'Вы можете загрузить файл кликнув -> /cmd_upload_file\n'
         'Для отмены, выберите -> /cancel\n'
         'Или жмите по кнопке внизу 👇\n',
         reply_markup=keyboard,
