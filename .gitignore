@@ -3,10 +3,10 @@
 #launch.json folder
 .vscode/
 venv
+style_venv
 .env
 program.log
 __pycache__
-test.xlsx
 documents
 db.sqlite
 #Cache folder

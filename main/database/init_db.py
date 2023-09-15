@@ -7,7 +7,8 @@ cur = con.cursor()
 
 def create_db():
     """Создание таблиц для базы данных."""
-    cur.executescript('''
+    cur.executescript(
+        '''
     CREATE TABLE IF NOT EXISTS users(
         id INTEGER PRIMARY KEY,
         telegram_id INTEGER UNIQUE,
@@ -21,7 +22,8 @@ def create_db():
         xpath TEXT,
         FOREIGN KEY (user_id) REFERENCES users(id)
     );
-    ''')
+    '''
+    )
 
 
 create_db()

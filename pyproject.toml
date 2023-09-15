@@ -1,0 +1,11 @@
+[tool.black]
+src_paths = ["main"]
+line-length = 79
+skip-string-normalization = true
+extend-exclude = 'venv'
+
+[tool.isort]
+src_paths = ["main"]
+profile = "black"
+line_length = 79
+extend_skip = ["venv"]

@@ -1,21 +1,20 @@
+import io
 import logging
 import os
-from database.create_user_profile import added_user
+
 import pandas as pd
-from aiogram.types import ContentTypes, Message
 from aiogram import Bot, Dispatcher, executor, types
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 from aiogram.dispatcher import FSMContext
-from aiogram.utils import executor
-from dotenv import load_dotenv
-from aiogram.types import Message
-import io
-from settings import (
-    UPLOAD_FILE,
-    COMMANDS_FUNC,
-)
-from database.insert_data_db import added_parse_date_db
 from aiogram.dispatcher.filters.state import State, StatesGroup
+from aiogram.types import ContentTypes, Message
+from dotenv import load_dotenv
+
+from database.create_user_profile import added_user
+from database.insert_data_db import added_parse_date_db
+from database.return_url_path import select_date_db
+from pars_date import price
+from settings import COMMANDS_FUNC, PARSE_PRICE, UPLOAD_FILE
 
 load_dotenv()
 
@@ -63,6 +62,14 @@ async def cmd_upload_file(message: types.Message):
     await message.reply('Загрузите ваш файл!')
 
 
+@dp.message_handler(commands=['pars_site_price'])
+async def pars_site_price(message: types.Message):
+    """Получение цен на зюзюблика"""
+    data_sampling = await select_date_db(message)
+    get_price = await price(data_sampling)
+    await message.answer(get_price)
+
+
 @dp.message_handler(state=ByteState.name, content_types=ContentTypes.DOCUMENT)
 async def parse_date(message: Message, state: FSMContext):
     """Получение файла и данных."""
@@ -74,13 +81,19 @@ async def parse_date(message: Message, state: FSMContext):
                 await document.download(destination_file=file_data)
                 file_data.seek(0)
                 df = pd.read_excel(file_data)
-                await message.reply(
-                    df.head().to_string()
-                )
-                added_parse_date_db(message['from'], df)
+                await message.reply(df.head().to_string())
+                await added_parse_date_db(message['from'], df)
         except Exception as err:
             await logging.error(
                 f'Произошла ошибка при обработке файла: {str(err)}'
+            )
+            await message.reply(
+                'Не удалось обработать данные.\n'
+                'Убедитесь, что файл c расширением xlsx.\n'
+                'Проверьте структуру данных в файле:\n'
+                '\t\t - файл должен иметь структуру трех колонок.'
+                '\t\t - title, url, xpath\n'
+                '\t\t - имя,\tадресс, xpath подготовленный путь до цены'
             )
         await state.finish()
 
@@ -99,7 +112,8 @@ async def send_welcome(message: types.Message):
     keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
     button_1 = types.KeyboardButton(text=UPLOAD_FILE)
     button_2 = types.KeyboardButton(text='/cancel')
-    keyboard.add(button_1, button_2)
+    button_3 = types.KeyboardButton(text=PARSE_PRICE)
+    keyboard.add(button_1, button_2, button_3)
 
     await message.reply(
         'Вас приветствует Ваш персональный помощник!\n'
@@ -117,6 +131,7 @@ async def listen_message(message: types.Message):
     """Отлов нажатой кнопки, и подключение функционала."""
     commands = {
         UPLOAD_FILE: cmd_upload_file,
+        PARSE_PRICE: pars_site_price,
     }
     selected_command = commands.get(message.text)
 
