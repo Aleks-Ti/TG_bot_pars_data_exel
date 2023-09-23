@@ -7,6 +7,7 @@ cur = con.cursor()
 
 def create_db():
     """Создание таблиц для базы данных."""
+
     cur.executescript(
         '''
     CREATE TABLE IF NOT EXISTS users(

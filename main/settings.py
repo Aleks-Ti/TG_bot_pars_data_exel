@@ -1,13 +1,12 @@
-# start block buttons
-
 UPLOAD_FILE = "Загрузить файл"
+"""Представление кнопки Телеграм на русском."""
+
 PARSE_PRICE = "Стоимость зюзюблика"
-# NEW_BUTTON = ''
-
-# end block buttons
-
+"""Представление кнопки Телеграм на русском."""
 
 COMMANDS_FUNC = (
-    UPLOAD_FILE,  # Возможность добавить buttons из block buttons
+    UPLOAD_FILE,
     PARSE_PRICE,
+    # Возможность добавить buttons из block buttons
 )
+"""Кортеж с переменными, содержащие названия кнопок на русском."""
